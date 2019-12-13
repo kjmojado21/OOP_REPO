@@ -37,7 +37,7 @@
 										$table .= "<td>r/c</td>";
 									else
 										$table .= "<td>".$j."</td>";
-								}else{
+								}else{	
 									if( $j == 0)
 										$table.= "<td>".$i."</td>";
 									else
