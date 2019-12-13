@@ -1,0 +1,44 @@
+INSERT INTO student (`student_firstname`,`student_lastname`,`student_course`,`student_country`)
+VALUES ('Christian', 'Legaspi', 'Web Development', 'Philippines')
+
+SELECT * FROM `student`
+
+SELECT CONCAT(student_firstname, ' ', student_lastname) AS complete_name FROM student
+
+SELECT * FROM `student` WHERE student_country = 'Philippines'
+
+SELECT * FROM `student` WHERE student_course = 'Web Basic' AND student_country = 'Japan'
+
+SELECT * FROM `student` WHERE student_course = 'Web Basic' OR student_country = 'Japan'
+
+SELECT * FROM student ORDER BY student_firstname ASC
+
+SELECT COUNT(*) FROM `student` WHERE student_course = 'Web Basic'
+
+SELECT * FROM student WHERE student_firstname LIKE 'c%'
+
+SELECT * FROM student WHERE student_firstname LIKE '%c%'
+
+SELECT student_country, COUNT(student_country) AS country_tally FROM
+student GROUP BY student_country
+
+UPDATE student SET student_firstname = 'Michelle', student_lastname ='Rodriguez' WHERE student_id = 1
+
+//Physical Delete
+DELETE FROM student WHERE student_id = 1
+
+//Logical Delete Steps
+    1. UPDATE student SET student_status = 'D' WHERE student_id = 2
+    2. SELECT * FROM `student` WHERE student_status != 'D'
+
+date format  = '2019-07-15'
+
+SELECT * FROM student WHERE student_birthday BETWEEN '1999-01-01' AND '2000-01-01'
+
+SELECT * FROM student WHERE student_id IN (1,3,4)
+
+SELECT AVG(student_age) as Average_Age FROM student
+
+SELECT MAX(student_age) as Max_Age FROM student
+
+SELECT SUM(student_age) as Total_Age FROM student
